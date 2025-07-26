@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -80,22 +81,26 @@ const ecoProducts = [
   {
     name: "Upcycled Bottle Planters",
     description: "Beautiful plant pots made from recycled glass bottles",
-    price: "Starting at $15"
+    price: "Starting at Rs.15",
+    image: "/bottles.png"
   },
   {
     name: "Reclaimed Wood Shelves",
     description: "Rustic floating shelves from sustainable wood sources",
-    price: "Starting at $45"
+    price: "Starting at Rs.45",
+    image: "/woodshelf.png" 
   },
   {
     name: "Eco-Friendly Wall Art",
     description: "Handcrafted art pieces made from recycled materials",
-    price: "Starting at $25"
+    price: "Starting at Rs.25",
+    image: "/wallart.png" 
   },
   {
     name: "Natural Fiber Rugs",
     description: "Sustainable rugs made from organic hemp and jute",
-    price: "Starting at $75"
+    price: "Starting at Rs.75",
+    image: "/rug.png" 
   }
 ]
 
@@ -263,9 +268,14 @@ export default function HowItWorksPage() {
             {ecoProducts.map((product, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="pb-3">
-                  <div className="w-full h-32 bg-primary/5 rounded-lg flex items-center justify-center mb-3">
-                    <Recycle className="h-12 w-12 text-primary" />
-                  </div>
+                  <div className="w-full h-32 bg-primary/5 rounded-lg mb-3 overflow-hidden relative">
+  <Image
+    src={product.image}
+    alt={product.name}
+    fill
+    className="object-cover"
+  />
+</div>
                   <CardTitle className="text-lg">{product.name}</CardTitle>
                   <CardDescription>{product.description}</CardDescription>
                 </CardHeader>
