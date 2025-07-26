@@ -369,7 +369,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Need a Little Spark *Right Now*?
+              Need a Little Spark Right Now?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Sometimes you don&apos;t need a full makeover to feel good. Grab a quick win for instant happiness!
