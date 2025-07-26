@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
   ArrowRight,
@@ -16,11 +16,8 @@ import {
   Sparkles,
   CheckCircle2,
   Coffee,
-  Sun,
   TreePine,
   Smile,
-  Shield,
-  ShoppingBag, 
   Lightbulb, 
   Palette, 
   Gem, 
@@ -30,7 +27,7 @@ import {
 // Updated content for features/problems/solutions
 const problems = [
   "Your home feels disconnected from nature?",
-  "Want to be eco-friendly but don't know where to start?", 
+  "Want to be eco-friendly but don&apos;t know where to start?", 
   "Worried about high costs or overwhelming projects?",
   "Need expert advice that matches your style?"
 ]
@@ -49,7 +46,7 @@ const solutions = [
   {
     icon: Lightbulb, 
     title: "Clever & Cost-Effective",
-    description: "Explore budget-friendly solutions, including creative 'best out of waste' ideas."
+    description: "Explore budget-friendly solutions, including creative &apos;best out of waste&apos; ideas."
   }
 ]
 
@@ -114,7 +111,7 @@ const testimonials = [
     name: "Ben L.", 
     avatar: "BL",
     rating: 5,
-    text: "Getting quotes was so easy, and the prices were surprisingly affordable for eco-design. Our living room is transformed, and we love knowing it's sustainable.",
+    text: "Getting quotes was so easy, and the prices were surprisingly affordable for eco-design. Our living room is transformed, and we love knowing it&apos;s sustainable.",
     transform: "Modern Family Space",
     imageSrc: "/home2.png" // No image for this one, or add another if you have it
   },
@@ -122,7 +119,7 @@ const testimonials = [
     name: "Chloe P.",
     avatar: "CP", 
     rating: 5,
-    text: "The ready-made plant pots from recycled bottles were a perfect quick win! They add so much character. Can't wait for my bigger project!",
+    text: "The ready-made plant pots from recycled bottles were a perfect quick win! They add so much character. Can&apos;t wait for my bigger project!",
     transform: "Sunny Plant Corner",
     imageSrc: "/home3.png"// No image for this one, or add another if you have it
   }
@@ -170,7 +167,7 @@ export default function HomePage() {
               <Button size="lg" className="text-lg px-8 py-6 shadow-lg" asChild>
                 <Link href="/start">
                   <Camera className="h-5 w-5 mr-2" />
-                  Show Me My Home's Potential
+                  Show Me My Home&apos;s Potential
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
@@ -218,7 +215,7 @@ export default function HomePage() {
           </div>
           
           <p className="text-xl text-primary font-semibold">
-            It doesn't have to be this way. We're here to help you unlock your home's full potential!
+            It doesn&apos;t have to be this way. We&apos;re here to help you unlock your home&apos;s full potential!
           </p>
         </div>
       </section>
@@ -228,7 +225,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Imagine Your Dream Home. We'll Help You Get There.
+              Imagine Your Dream Home. We&apos;ll Help You Get There.
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               New Branch makes creating your perfect, eco-friendly space surprisingly simple and joyful.
@@ -260,10 +257,10 @@ export default function HomePage() {
               Your Green Makeover Journey
             </Badge>
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              It's Easier Than You Think!
+              It&apos;s Easier Than You Think!
             </h2>
             <p className="text-xl text-muted-foreground">
-              Just three simple steps to unlock your home's natural potential
+              Just three simple steps to unlock your home&apos;s natural potential
             </p>
           </div>
           
@@ -303,7 +300,7 @@ export default function HomePage() {
             <Button size="lg" className="shadow-lg" asChild>
               <Link href="/start">
                 <Heart className="h-5 w-5 mr-2" />
-                Ready to Start? Let's Go!
+                Ready to Start? Let&apos;s Go!
               </Link>
             </Button>
           </div>
@@ -345,7 +342,7 @@ export default function HomePage() {
                 </div>
                 <CardContent className="p-6">
                   <p className="text-lg font-medium text-foreground mb-4 italic leading-relaxed">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -375,7 +372,7 @@ export default function HomePage() {
               Need a Little Spark *Right Now*?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Sometimes you don't need a full makeover to feel good. Grab a quick win for instant happiness!
+              Sometimes you don&apos;t need a full makeover to feel good. Grab a quick win for instant happiness!
             </p>
           </div>
           
@@ -425,8 +422,8 @@ export default function HomePage() {
               Your Happy, Eco-Friendly Home Awaits!
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              It's time to create a space that truly reflects you and your love for the planet. 
-              Let's make some magic happen!
+              It&apos;s time to create a space that truly reflects you and your love for the planet. 
+              Let&apos;s make some magic happen!
             </p>
           </div>
           
