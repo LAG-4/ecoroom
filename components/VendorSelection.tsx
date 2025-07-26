@@ -18,7 +18,6 @@ import {
   MessageCircle,
   Phone,
   Mail,
-  // IndianRupee, // Removed: 'IndianRupee' is defined but never used.
   Clock,
   Award,
   Heart
@@ -66,89 +65,142 @@ export function VendorSelection({
     setStep('success')
   }
 
-  if (step === 'success') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="mb-8">
-            <div className="relative inline-block">
-              <CheckCircle className="h-20 w-20 text-green-500" />
-              <div className="absolute inset-0 rounded-full border-4 border-green-200 animate-pulse"></div>
+if (step === 'success') {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          {/* Success Animation */}
+          <div className="relative inline-block mb-8">
+            <div className="relative">
+              <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center shadow-2xl">
+                <CheckCircle className="h-12 w-12 text-primary-foreground" />
+              </div>
+              <div className="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping"></div>
+              <div className="absolute -inset-2 rounded-full border border-primary/10 animate-pulse"></div>
             </div>
           </div>
 
-          <Badge className="mb-6 px-4 py-2 bg-green-500 hover:bg-green-600">
-            <Heart className="h-4 w-4 mr-2" />
-            Booking Confirmed!
-          </Badge>
+          <div className="space-y-4 mb-8">
+            <Badge className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground border-0 text-base font-medium">
+              <Heart className="h-5 w-5 mr-2" />
+              Booking Confirmed Successfully!
+            </Badge>
+            
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+              Welcome to Your
+              <br />
+              <span className="text-primary">
+                Dream Home Journey
+              </span>
+            </h1>
+            
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              🎉 Congratulations! <strong>{selectedVendor.vendorName}</strong> will reach out within <strong>24 hours</strong> to begin crafting your perfect space.
+            </p>
+          </div>
+        </div>
 
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Your Dream Home Journey Begins!
-          </h1>
-
-          <p className="text-xl text-muted-foreground mb-8">
-            {selectedVendor.vendorName} will contact you within 24 hours to discuss your project details.
-          </p>
-
-          <Card className="text-left mb-8">
-            <CardContent className="p-6">
-              <h3 className="font-semibold mb-4">What Happens Next?</h3>
+        {/* Enhanced Booking Details */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card className="shadow-xl border">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <Avatar className="h-16 w-16 border-4 border-primary/20">
+                  <AvatarImage src={`/vendor-${selectedVendor.vendorId}.jpg`} />
+                  <AvatarFallback className="text-lg bg-primary text-primary-foreground">
+                    {selectedVendor.vendorName.split(' ').map(n => n[0]).join('')}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">{selectedVendor.vendorName}</h3>
+                  <div className="flex items-center gap-2 text-primary">
+                    <Star className="h-4 w-4 fill-current" />
+                    <span className="font-medium">{selectedVendor.vendorRating} • {selectedVendor.completedProjects}+ projects</span>
+                  </div>
+                </div>
+              </div>
+              
               <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-sm font-semibold text-primary">1</span>
-                  </div>
-                  <div>
-                    <p className="font-medium">Initial Consultation</p>
-                    <p className="text-sm text-muted-foreground">Your designer will call you to discuss your vision and preferences in detail.</p>
-                  </div>
+                <div className="flex justify-between items-center p-3 bg-primary/5 rounded-lg">
+                  <span className="font-medium text-foreground">Project Value</span>
+                  <span className="text-xl font-bold text-primary">{formatPrice(selectedVendor.price)}</span>
                 </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-sm font-semibold text-primary">2</span>
-                  </div>
-                  <div>
-                    <p className="font-medium">Site Visit & Measurements</p>
-                    <p className="text-sm text-muted-foreground">A professional visit to your home to take accurate measurements and assess the space.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-sm font-semibold text-primary">3</span>
-                  </div>
-                  <div>
-                    <p className="font-medium">Design Proposal</p>
-                    <p className="text-sm text-muted-foreground">Receive detailed 3D designs, material lists, and project timeline.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-sm font-semibold text-primary">4</span>
-                  </div>
-                  <div>
-                    <p className="font-medium">Project Execution</p>
-                    <p className="text-sm text-muted-foreground">Professional implementation with regular updates and quality checks.</p>
-                  </div>
+                <div className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                  <span className="font-medium text-foreground">Timeline</span>
+                  <span className="font-semibold text-foreground">{selectedVendor.timeline}</span>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline">
-              View My Dashboard
+          <Card className="shadow-xl border">
+            <CardContent className="p-8">
+              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-primary" />
+                What Happens Next?
+              </h3>
+              
+              <div className="space-y-4">
+                {[
+                  { icon: "📞", title: "Initial Call", desc: "Designer contacts you within 24 hours", time: "Today" },
+                  { icon: "📏", title: "Site Visit", desc: "Professional measurements & assessment", time: "Week 1" },
+                  { icon: "🎨", title: "Design Phase", desc: "3D designs & material selection", time: "Week 2-3" },
+                  { icon: "🔨", title: "Execution", desc: "Professional implementation begins", time: "Week 4+" }
+                ].map((step, i) => (
+                  <div key={i} className="flex items-start gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="text-2xl">{step.icon}</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-semibold text-foreground">{step.title}</h4>
+                        <Badge variant="outline" className="text-xs">{step.time}</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-1">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="text-center space-y-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <Button size="lg" variant="outline" className="flex-1 h-14 text-lg font-medium">
+              <MessageCircle className="h-5 w-5 mr-2" />
+              View Project Dashboard
             </Button>
-            <Button size="lg">
-              Share My Experience
+            <Button size="lg" className="flex-1 h-14 text-lg font-medium shadow-lg">
+              <Heart className="h-5 w-5 mr-2" />
+              Share Your Experience
             </Button>
+          </div>
+
+          {/* Contact Support */}
+          <div className="pt-8 border-t border-border">
+            <p className="text-muted-foreground mb-4">Need immediate assistance?</p>
+            <div className="flex justify-center gap-6">
+              <Button variant="ghost" size="sm" className="text-primary hover:text-primary hover:bg-primary/10">
+                <Phone className="h-4 w-4 mr-2" />
+                Call Support
+              </Button>
+              <Button variant="ghost" size="sm" className="text-primary hover:text-primary hover:bg-primary/10">
+                <Mail className="h-4 w-4 mr-2" />
+                Email Us
+              </Button>
+              <Button variant="ghost" size="sm" className="text-primary hover:text-primary hover:bg-primary/10">
+                <MessageCircle className="h-4 w-4 mr-2" />
+                Live Chat
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
+}
+
 
   if (step === 'schedule') {
     return (
@@ -322,29 +374,39 @@ export function VendorSelection({
                   </div>
 
                   <div>
-                    <h3 className="font-semibold mb-3">Portfolio Highlights</h3>
-                    <div className="grid grid-cols-2 gap-3">
-                      {selectedVendor.portfolio.slice(0, 4).map((work, i) => (
-                        <div key={i} className="space-y-2">
-                          <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
-                            <Image
-                              src={work.image}
-                              alt={work.title}
-                              fill
-                              className="object-cover"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none'
-                              }}
-                            />
-                          </div>
-                          <div>
-                            <h4 className="font-medium text-sm">{work.title}</h4>
-                            <p className="text-xs text-muted-foreground">{work.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+  <h3 className="font-semibold mb-3">Portfolio Highlights</h3>
+  <div className="grid grid-cols-2 gap-3">
+    {[
+      { image: "/home1.png", title: "Modern Living Room Design", description: "Contemporary furniture with clean lines" },
+      { image: "/home2.png", title: "Elegant Bedroom Setup", description: "Cozy and sophisticated interior" },
+      { image: "/home3.png", title: "Kitchen Renovation", description: "Functional and stylish cooking space" },
+      { image: "/bottles.png", title: "Decorative Accents", description: "Artistic bottle arrangements" },
+      { image: "/hero.png", title: "Complete Home Makeover", description: "Full interior transformation" },
+      { image: "/rug.png", title: "Floor Styling", description: "Premium rug and flooring design" },
+      { image: "/wallart.png", title: "Wall Art Installation", description: "Creative wall decoration solutions" },
+      { image: "/woodshelf.png", title: "Custom Storage Solutions", description: "Handcrafted wooden shelving" }
+    ].slice(0, 4).map((work, i) => (
+      <div key={i} className="space-y-2">
+        <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
+          <Image
+            src={work.image}
+            alt={work.title}
+            fill
+            className="object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none'
+            }}
+          />
+        </div>
+        <div>
+          <h4 className="font-medium text-sm">{work.title}</h4>
+          <p className="text-xs text-muted-foreground">{work.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
                 </div>
               </CardContent>
             </Card>
