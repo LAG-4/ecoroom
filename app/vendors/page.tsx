@@ -228,7 +228,7 @@ export default function VendorsPage() {
           <Card className="p-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                What You'll Provide to Clients
+                What You&apos;ll Provide to Clients
               </h2>
               <p className="text-muted-foreground">
                 Help homeowners transform their spaces with your professional expertise.

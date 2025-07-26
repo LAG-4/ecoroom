@@ -177,7 +177,7 @@ export default function HowItWorksPage() {
               Why Choose EcoBid?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              More than just home improvement - we're building a sustainable future, one home at a time.
+              More than just home improvement - we&apos;re building a sustainable future, one home at a time.
             </p>
           </div>
 
@@ -255,7 +255,7 @@ export default function HowItWorksPage() {
               Ready-Made Eco Products
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Can't wait for a full makeover? Start small with our curated collection of sustainable, upcycled home decor.
+              Can&apos;t wait for a full makeover? Start small with our curated collection of sustainable, upcycled home decor.
             </p>
           </div>
 
@@ -326,7 +326,7 @@ export default function HowItWorksPage() {
               Ready to Love Your Home Again?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of homeowners who've created their dream eco-friendly spaces. 
+              Join thousands of homeowners who&apos;ve created their dream eco-friendly spaces. 
               Your sustainable home transformation starts with a single photo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
