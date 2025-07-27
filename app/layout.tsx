@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css";
 import { NavBar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@vercel/analytics/next"
 /* ----------  Font definition  ---------- */
 
 /* ----------  Metadata  ---------- */
@@ -53,6 +54,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
         <NavBar/>
+        <Analytics/>
         {children}
         </ThemeProvider>
       </body>
