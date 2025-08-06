@@ -454,7 +454,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-primary" />
-              <span>Your vision, our expertise</span>
+              <span>Your vision, our expertise NEW BRANCH</span>
             </div>
           </div>
         </div>
